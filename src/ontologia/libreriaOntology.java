@@ -49,10 +49,10 @@ public class libreriaOntology extends Ontology {
             predicadoOfertaTesis.add("Tesis", conceptoTesis);
 
             // Estructura de ACCIONES
-            AgentActionSchema accionSolicitarLibro = new AgentActionSchema("Prestar Libro");
+            AgentActionSchema accionSolicitarLibro = new AgentActionSchema("Solicitar Libro");
             accionSolicitarLibro.add("Libro", conceptoLibro);
             
-            AgentActionSchema accionSolicitarTesis = new AgentActionSchema("Prestar Tesis");
+            AgentActionSchema accionSolicitarTesis = new AgentActionSchema("Solicitar Tesis");
             accionSolicitarTesis.add("Tesis", conceptoTesis);
             
             AgentActionSchema accionDevolverLibro = new AgentActionSchema("Devolver Libro");

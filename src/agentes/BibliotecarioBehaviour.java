@@ -34,9 +34,11 @@ public class BibliotecarioBehaviour extends SimpleBehaviour {
             switch (msg.getContent()) {
                 case "Solicitar Libro":
                     int cveLibro = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la clave del libro a solicitar"));
+                    //BD
                     break;
                 case "Solicitar Tesis":
                     int cveTesis = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la clave de la tesis a solicitar"));
+                    //BD
                     break;
                 default:
                     throw new AssertionError();

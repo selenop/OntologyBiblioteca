@@ -69,7 +69,6 @@ public class FrmMainMenu extends javax.swing.JFrame {
         pnlPrestamos.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Solicitudes", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP));
 
         btnSolicitarLibro.setText("Solicitar Libro");
-        btnSolicitarLibro.setActionCommand("Solicitar Libro");
         btnSolicitarLibro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSolicitarLibroActionPerformed(evt);

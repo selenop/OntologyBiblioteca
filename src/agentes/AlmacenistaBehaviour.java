@@ -32,9 +32,11 @@ public class AlmacenistaBehaviour extends SimpleBehaviour {
             switch (msg.getContent()) {
                 case "Devolver Libro":
                     int cveLibro = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la clave del libro a devolver"));
+                    //BD
                     break;
                 case "Devolver Tesis":
                     int cveTesis = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la clave de la tesis a devolver"));
+                    //BD
                     break;
                 default:
                     throw new AssertionError();
