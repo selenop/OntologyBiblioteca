@@ -6,18 +6,16 @@ import jade.core.AID;
 import jade.core.Agent;
 import jade.core.behaviours.SimpleBehaviour;
 import jade.lang.acl.ACLMessage;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
-public class BibliotecarioBehaviour extends SimpleBehaviour {
+public class AlmacenistaBehaviour extends SimpleBehaviour {
 
     private boolean finished = false;
 
     Codec codec;
     Ontology ontologia;
 
-    public BibliotecarioBehaviour(Agent agenteBibliotecario, Codec codec, Ontology ontologia) {
+    public AlmacenistaBehaviour(Agent agenteBibliotecario, Codec codec, Ontology ontologia) {
         super(agenteBibliotecario);
         this.codec = codec;
         this.ontologia = ontologia;
@@ -25,23 +23,22 @@ public class BibliotecarioBehaviour extends SimpleBehaviour {
 
     @Override
     public void action() {
-        System.out.println("[Bibliotecario] Esperando petición...");
+        System.out.println("[Almacenista] Esperando petición...");
         ACLMessage msg = myAgent.blockingReceive();
 
         if (msg.getPerformative() == ACLMessage.INFORM) {
-            System.out.println("[Bibliotecario] Mensaje recibido - " + msg.getContent());
+            System.out.println("[Almacenista] Mensaje recibido - " + msg.getContent());
             
             switch (msg.getContent()) {
-                case "Solicitar Libro":
-                    int cveLibro = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la clave del libro a solicitar"));
+                case "Devolver Libro":
+                    int cveLibro = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la clave del libro a devolver"));
                     break;
-                case "Solicitar Tesis":
-                    int cveTesis = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la clave de la tesis a solicitar"));
+                case "Devolver Tesis":
+                    int cveTesis = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la clave de la tesis a devolver"));
                     break;
                 default:
                     throw new AssertionError();
             }
-            
         }
     }
 
@@ -58,7 +55,7 @@ public class BibliotecarioBehaviour extends SimpleBehaviour {
         msg.setContent("Listo");
         myAgent.send(msg);
         
-        System.out.println("[Bibliotecario] Mensaje enviado a " + receiverID.getLocalName());
+        System.out.println("[Almacenista] Mensaje enviado a " + receiverID.getLocalName());
         
         return finished;
     }

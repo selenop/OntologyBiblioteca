@@ -45,7 +45,8 @@ public class Recepcionista extends Agent {
         getContentManager().registerLanguage(codec);
         getContentManager().registerOntology(ontologia);
 
-        addBehaviour(new RecepcionistaBehaviour(this, codec, ontologia));
+        addBehaviour(new RecepcionistaTickerBehaviour(this, 1000));
+        //addBehaviour(new RecepcionistaBehaviour(this, codec, ontologia));
     }
 
     @Override

@@ -6,13 +6,6 @@
 package GUI;
 
 import agentes.*;
-import jade.core.AID;
-import jade.core.Agent;
-import jade.core.behaviours.ReceiverBehaviour;
-import jade.lang.acl.ACLMessage;
-import jade.wrapper.ControllerException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -20,16 +13,17 @@ import java.util.logging.Logger;
  */
 public class FrmMainMenu extends javax.swing.JFrame {
 
-    Recepcionista Recepcionista;
-
-    public FrmMainMenu() throws ControllerException {
+    /**
+     * Creates new form FrmMainMenu
+     */
+    public FrmMainMenu() {
         initComponents();
         this.setLocationRelativeTo(null);
-
+        
+        AgentManager.creaAgente("Bibliotecario", "agentes.Bibliotecario", null);
+        AgentManager.creaAgente("Almacenista", "agentes.Almacenista", null);
         AgentManager.creaAgente("Recepcionista", "agentes.Recepcionista", null);
-        AgentManager.container.getAgent("Recepcionista");
-        //AgentManager.creaAgente("Bibliotecario", "agentes.Bibliotecario", null);
-
+        
     }
 
     /**
@@ -74,7 +68,7 @@ public class FrmMainMenu extends javax.swing.JFrame {
 
         pnlPrestamos.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Solicitudes", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP));
 
-        btnSolicitarLibro.setText("Prestar Libro");
+        btnSolicitarLibro.setText("Solicitar Libro");
         btnSolicitarLibro.setActionCommand("Solicitar Libro");
         btnSolicitarLibro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -161,13 +155,14 @@ public class FrmMainMenu extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-
+        
+    
     private void btnSolicitarTesisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSolicitarTesisActionPerformed
-        // TODO add your handling code here:
+        RecepcionistaTickerBehaviour.content = "Solicitar Tesis";
     }//GEN-LAST:event_btnSolicitarTesisActionPerformed
 
     private void btnDevolverTesisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDevolverTesisActionPerformed
-        // TODO add your handling code here:
+        RecepcionistaTickerBehaviour.content = "Devolver Tesis";
     }//GEN-LAST:event_btnDevolverTesisActionPerformed
 
     private void btnRegistrarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarUsuarioActionPerformed
@@ -175,14 +170,11 @@ public class FrmMainMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_btnRegistrarUsuarioActionPerformed
 
     private void btnSolicitarLibroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSolicitarLibroActionPerformed
-        ACLMessage msg = new ACLMessage(ACLMessage.INFORM);
-        msg.addReceiver(Recepcionista.getAID());
-        msg.setContent("Solicitar Libro");
-        Recepcionista.send(msg);
+        RecepcionistaTickerBehaviour.content = "Solicitar Libro";
     }//GEN-LAST:event_btnSolicitarLibroActionPerformed
 
     private void btnDevolverLibroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDevolverLibroActionPerformed
-        // TODO add your handling code here:
+        RecepcionistaTickerBehaviour.content = "Devolver Tesis";
     }//GEN-LAST:event_btnDevolverLibroActionPerformed
 
     /**
@@ -215,11 +207,7 @@ public class FrmMainMenu extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                try {
-                    new FrmMainMenu().setVisible(true);
-                } catch (ControllerException ex) {
-                    Logger.getLogger(FrmMainMenu.class.getName()).log(Level.SEVERE, null, ex);
-                }
+                new FrmMainMenu().setVisible(true);
             }
         });
     }
