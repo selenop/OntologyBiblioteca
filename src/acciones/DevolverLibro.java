@@ -3,15 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package libreriaontologia;
+package acciones;
 
-import jade.content.Predicate;
+import conceptos.Libro;
+import jade.content.AgentAction;
 
 /**
  *
  * @author mvsam
  */
-public class Oferta implements Predicate {
+public class DevolverLibro implements AgentAction {
  
    private Libro libro;
  
