@@ -98,7 +98,8 @@ public class libreriaOntology extends Ontology {
         conceptoTesis.add("Titulo", (PrimitiveSchema) getSchema(BasicOntology.STRING));
         conceptoTesis.add("Autor", (PrimitiveSchema) getSchema(BasicOntology.STRING));
         conceptoTesis.add("Especialidad", (PrimitiveSchema) getSchema(BasicOntology.STRING));
-        
+        conceptoTesis.add("Ejemplares", (PrimitiveSchema) getSchema(BasicOntology.INTEGER));
+
         return conceptoTesis;
     }
 }

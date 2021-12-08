@@ -16,12 +16,14 @@ public class Tesis implements Concept {
     private String titulo;
     private String autor;
     private String especialidad;
+    private int ejemplares;
 
-    public Tesis(int clave, String titulo, String autor, String especialidad) {
+    public Tesis(int clave, String titulo, String autor, String especialidad, int ejemplares) {
         this.clave = clave;
         this.titulo = titulo;
         this.autor = autor;
         this.especialidad = especialidad;
+        this.ejemplares = ejemplares;
     }
 
     public int getClave() {
@@ -31,7 +33,7 @@ public class Tesis implements Concept {
     public void setClave(int clave) {
         this.clave = clave;
     }
-    
+
     public String getTitulo() {
         return titulo;
     }
@@ -56,9 +58,12 @@ public class Tesis implements Concept {
         this.especialidad = especialidad;
     }
 
+    public int getEjemplares() {
+        return ejemplares;
+    }
+
+    public void setEjemplares(int ejemplares) {
+        this.ejemplares = ejemplares;
+    }
     
-    
-   
- 
-   
 }

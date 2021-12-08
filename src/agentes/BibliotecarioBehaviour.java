@@ -49,7 +49,7 @@ public class BibliotecarioBehaviour extends SimpleBehaviour {
                     Tesis tesis = createDB.getTesisPorClave(cveTesis, FrmMainMenu.arrTesis);
                     
                     if(tesis.getEjemplares() > 0){
-                        libro.setEjemplares(libro.getEjemplares() - 1);
+                        tesis.setEjemplares(tesis.getEjemplares() - 1);
                     } else {
                         //No se pudo
                     }

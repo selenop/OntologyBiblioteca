@@ -3,13 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Susana/Documents/NETBEANS/OntologyBiblioteca/src/agentes/RecepcionistaTickerBehaviour.java</file>
-            <file>file:/C:/Users/Susana/Documents/NETBEANS/OntologyBiblioteca/src/GUI/FrmMainMenu.java</file>
-            <file>file:/C:/Users/Susana/Documents/NETBEANS/OntologyBiblioteca/src/GUI/createDB.java</file>
-            <file>file:/C:/Users/Susana/Documents/NETBEANS/OntologyBiblioteca/src/agentes/AgentManager.java</file>
-            <file>file:/C:/Users/Susana/Documents/NETBEANS/OntologyBiblioteca/src/ontologia/libreriaOntology.java</file>
-            <file>file:/C:/Users/Susana/Documents/NETBEANS/OntologyBiblioteca/src/conceptos/Tesis.java</file>
-            <file>file:/C:/Users/Susana/Documents/NETBEANS/OntologyBiblioteca/src/conceptos/Libro.java</file>
+            <file>file:/C:/Users/mvsam/Documents/NetBeansProjects/OntologyBiblioteca/src/GUI/FrmMainMenu.java</file>
+            <file>file:/C:/Users/mvsam/Documents/NetBeansProjects/OntologyBiblioteca/src/conceptos/Tesis.java</file>
+            <file>file:/C:/Users/mvsam/Documents/NetBeansProjects/OntologyBiblioteca/src/GUI/createDB.java</file>
+            <file>file:/C:/Users/mvsam/Documents/NetBeansProjects/OntologyBiblioteca/src/imagenes/user.png</file>
+            <file>file:/C:/Users/mvsam/Documents/NetBeansProjects/OntologyBiblioteca/src/imagenes/plus.png</file>
+            <file>file:/C:/Users/mvsam/Documents/NetBeansProjects/OntologyBiblioteca/src/imagenes/library.jpg</file>
         </group>
     </open-files>
 </project-private>
