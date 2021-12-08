@@ -17,6 +17,13 @@ public class Tesis implements Concept {
     private String autor;
     private String especialidad;
 
+    public Tesis(int clave, String titulo, String autor, String especialidad) {
+        this.clave = clave;
+        this.titulo = titulo;
+        this.autor = autor;
+        this.especialidad = especialidad;
+    }
+
     public int getClave() {
         return clave;
     }

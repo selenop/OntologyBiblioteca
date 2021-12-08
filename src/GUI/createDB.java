@@ -15,7 +15,11 @@ public class createDB {
         arrLibros.add(new Libro(4,"Ocho lugares que me recuerdan a ti","Alberto Villarreal","Planeta","1234567891026",4,"Literatura","Thriller"));
         arrLibros.add(new Libro(5,"Hermoso Final","Kami Garcia","Espasa","1234567891027",3,"Literatura","Thriller"));
     
-        arrTesis.add(new Tesis(11,"Agua","Severus Snape"))
+        arrTesis.add(new Tesis(11,"Agua","Severus Snape","Biologia"));
+        arrTesis.add(new Tesis(12,"El lado oscuro de la historia","Aiden Sheppard","Historia"));
+        arrTesis.add(new Tesis(13,"Actividad despues de la muerte","Meyde Medler","Medicina"));
+        arrTesis.add(new Tesis(14,"Dioses o mostruos","Attickus Perceo","Historia"));
+        arrTesis.add(new Tesis(15,"Derechos de los animales.","Derek Vega","Etica"));
         
     }
     

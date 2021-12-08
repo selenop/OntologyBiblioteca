@@ -35,7 +35,6 @@ public class FrmMainMenu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnRegistrarUsuario = new javax.swing.JButton();
         pnlPrestamos = new javax.swing.JPanel();
         btnSolicitarLibro = new javax.swing.JButton();
         btnSolicitarTesis = new javax.swing.JButton();
@@ -49,22 +48,6 @@ public class FrmMainMenu extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(724, 409));
         setPreferredSize(new java.awt.Dimension(724, 409));
         getContentPane().setLayout(null);
-
-        btnRegistrarUsuario.setBackground(new java.awt.Color(102, 153, 0));
-        btnRegistrarUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/user.png"))); // NOI18N
-        btnRegistrarUsuario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnRegistrarUsuario.setLabel("Registrar Usuario");
-        btnRegistrarUsuario.setMargin(new java.awt.Insets(2, 2, 2, 2));
-        btnRegistrarUsuario.setMaximumSize(new java.awt.Dimension(100, 200));
-        btnRegistrarUsuario.setMinimumSize(new java.awt.Dimension(100, 200));
-        btnRegistrarUsuario.setPreferredSize(new java.awt.Dimension(100, 200));
-        btnRegistrarUsuario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRegistrarUsuarioActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btnRegistrarUsuario);
-        btnRegistrarUsuario.setBounds(60, 50, 190, 60);
 
         pnlPrestamos.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Solicitudes", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP));
 
@@ -87,24 +70,24 @@ public class FrmMainMenu extends javax.swing.JFrame {
         pnlPrestamosLayout.setHorizontalGroup(
             pnlPrestamosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlPrestamosLayout.createSequentialGroup()
-                .addGap(53, 53, 53)
-                .addGroup(pnlPrestamosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnSolicitarLibro)
-                    .addComponent(btnSolicitarTesis))
-                .addContainerGap(70, Short.MAX_VALUE))
+                .addGap(29, 29, 29)
+                .addGroup(pnlPrestamosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnSolicitarTesis)
+                    .addComponent(btnSolicitarLibro))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
         pnlPrestamosLayout.setVerticalGroup(
             pnlPrestamosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlPrestamosLayout.createSequentialGroup()
-                .addGap(35, 35, 35)
+                .addGap(23, 23, 23)
                 .addComponent(btnSolicitarLibro)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
                 .addComponent(btnSolicitarTesis)
-                .addGap(59, 59, 59))
+                .addGap(23, 23, 23))
         );
 
         getContentPane().add(pnlPrestamos);
-        pnlPrestamos.setBounds(60, 140, 232, 216);
+        pnlPrestamos.setBounds(180, 170, 180, 160);
         pnlPrestamos.getAccessibleContext().setAccessibleName("Préstamos");
 
         pnlDevoluciones.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Devoluciones", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP));
@@ -128,24 +111,24 @@ public class FrmMainMenu extends javax.swing.JFrame {
         pnlDevolucionesLayout.setHorizontalGroup(
             pnlDevolucionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlDevolucionesLayout.createSequentialGroup()
-                .addGap(65, 65, 65)
+                .addGap(31, 31, 31)
                 .addGroup(pnlDevolucionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnDevolverTesis)
                     .addComponent(btnDevolverLibro))
-                .addContainerGap(54, Short.MAX_VALUE))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
         pnlDevolucionesLayout.setVerticalGroup(
             pnlDevolucionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlDevolucionesLayout.createSequentialGroup()
-                .addGap(33, 33, 33)
+                .addGap(23, 23, 23)
                 .addComponent(btnDevolverLibro)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
                 .addComponent(btnDevolverTesis)
-                .addGap(51, 51, 51))
+                .addGap(24, 24, 24))
         );
 
         getContentPane().add(pnlDevoluciones);
-        pnlDevoluciones.setBounds(380, 140, 234, 216);
+        pnlDevoluciones.setBounds(380, 170, 190, 160);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/library.jpg"))); // NOI18N
         getContentPane().add(jLabel1);
@@ -163,10 +146,6 @@ public class FrmMainMenu extends javax.swing.JFrame {
     private void btnDevolverTesisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDevolverTesisActionPerformed
         RecepcionistaTickerBehaviour.content = "Devolver Tesis";
     }//GEN-LAST:event_btnDevolverTesisActionPerformed
-
-    private void btnRegistrarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarUsuarioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnRegistrarUsuarioActionPerformed
 
     private void btnSolicitarLibroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSolicitarLibroActionPerformed
         RecepcionistaTickerBehaviour.content = "Solicitar Libro";
@@ -214,7 +193,6 @@ public class FrmMainMenu extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnDevolverLibro;
     private javax.swing.JButton btnDevolverTesis;
-    private javax.swing.JButton btnRegistrarUsuario;
     private javax.swing.JButton btnSolicitarLibro;
     private javax.swing.JButton btnSolicitarTesis;
     private javax.swing.JLabel jLabel1;
