@@ -1,5 +1,7 @@
 package agentes;
 
+import GUI.*;
+import conceptos.*;
 import jade.content.lang.Codec;
 import jade.content.onto.Ontology;
 import jade.core.AID;
@@ -34,11 +36,23 @@ public class BibliotecarioBehaviour extends SimpleBehaviour {
             switch (msg.getContent()) {
                 case "Solicitar Libro":
                     int cveLibro = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la clave del libro a solicitar"));
-                    //BD
+                    Libro libro = createDB.getLibroPorClave(cveLibro, FrmMainMenu.arrLibros);
+                    
+                    if(libro.getEjemplares() > 0){
+                        libro.setEjemplares(libro.getEjemplares() - 1);
+                    } else {
+                        //No se pudo
+                    }
                     break;
                 case "Solicitar Tesis":
                     int cveTesis = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la clave de la tesis a solicitar"));
-                    //BD
+                    Tesis tesis = createDB.getTesisPorClave(cveTesis, FrmMainMenu.arrTesis);
+                    
+                    if(tesis.getEjemplares() > 0){
+                        libro.setEjemplares(libro.getEjemplares() - 1);
+                    } else {
+                        //No se pudo
+                    }
                     break;
                 default:
                     throw new AssertionError();

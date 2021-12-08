@@ -6,6 +6,9 @@
 package GUI;
 
 import agentes.*;
+import conceptos.Libro;
+import conceptos.Tesis;
+import java.util.ArrayList;
 
 /**
  *
@@ -13,9 +16,9 @@ import agentes.*;
  */
 public class FrmMainMenu extends javax.swing.JFrame {
 
-    /**
-     * Creates new form FrmMainMenu
-     */
+    public static ArrayList<Libro> arrLibros = new ArrayList();
+    public static ArrayList<Tesis> arrTesis = new ArrayList();
+    
     public FrmMainMenu() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -24,6 +27,8 @@ public class FrmMainMenu extends javax.swing.JFrame {
         AgentManager.creaAgente("Almacenista", "agentes.Almacenista", null);
         AgentManager.creaAgente("Recepcionista", "agentes.Recepcionista", null);
         
+        arrLibros = createDB.readFromFileLibros();
+        arrTesis = createDB.readFromFileTesis();
     }
 
     /**
@@ -41,6 +46,10 @@ public class FrmMainMenu extends javax.swing.JFrame {
         pnlDevoluciones = new javax.swing.JPanel();
         btnDevolverLibro = new javax.swing.JButton();
         btnDevolverTesis = new javax.swing.JButton();
+        btnListaTesis = new javax.swing.JButton();
+        btnListaLibros = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tblLista = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -81,13 +90,13 @@ public class FrmMainMenu extends javax.swing.JFrame {
             .addGroup(pnlPrestamosLayout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addComponent(btnSolicitarLibro)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
                 .addComponent(btnSolicitarTesis)
                 .addGap(23, 23, 23))
         );
 
         getContentPane().add(pnlPrestamos);
-        pnlPrestamos.setBounds(180, 170, 180, 160);
+        pnlPrestamos.setBounds(150, 30, 180, 160);
         pnlPrestamos.getAccessibleContext().setAccessibleName("Préstamos");
 
         pnlDevoluciones.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Devoluciones", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.TOP));
@@ -122,13 +131,52 @@ public class FrmMainMenu extends javax.swing.JFrame {
             .addGroup(pnlDevolucionesLayout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addComponent(btnDevolverLibro)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
                 .addComponent(btnDevolverTesis)
                 .addGap(24, 24, 24))
         );
 
         getContentPane().add(pnlDevoluciones);
-        pnlDevoluciones.setBounds(380, 170, 190, 160);
+        pnlDevoluciones.setBounds(380, 30, 190, 160);
+
+        btnListaTesis.setText("Tesis");
+        btnListaTesis.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnListaTesisActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnListaTesis);
+        btnListaTesis.setBounds(230, 210, 70, 23);
+
+        btnListaLibros.setText("Libros");
+        btnListaLibros.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnListaLibrosActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnListaLibros);
+        btnListaLibros.setBounds(150, 210, 73, 23);
+
+        tblLista.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Clave", "Título", "Ejemplares"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(tblLista);
+
+        getContentPane().add(jScrollPane2);
+        jScrollPane2.setBounds(140, 240, 452, 120);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/library.jpg"))); // NOI18N
         getContentPane().add(jLabel1);
@@ -154,6 +202,14 @@ public class FrmMainMenu extends javax.swing.JFrame {
     private void btnDevolverLibroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDevolverLibroActionPerformed
         RecepcionistaTickerBehaviour.content = "Devolver Tesis";
     }//GEN-LAST:event_btnDevolverLibroActionPerformed
+
+    private void btnListaLibrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListaLibrosActionPerformed
+        createDB.printArrLibros(arrLibros, tblLista);
+    }//GEN-LAST:event_btnListaLibrosActionPerformed
+
+    private void btnListaTesisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListaTesisActionPerformed
+        createDB.printArrTesis(arrTesis, tblLista);
+    }//GEN-LAST:event_btnListaTesisActionPerformed
 
     /**
      * @param args the command line arguments
@@ -193,10 +249,14 @@ public class FrmMainMenu extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnDevolverLibro;
     private javax.swing.JButton btnDevolverTesis;
+    private javax.swing.JButton btnListaLibros;
+    private javax.swing.JButton btnListaTesis;
     private javax.swing.JButton btnSolicitarLibro;
     private javax.swing.JButton btnSolicitarTesis;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JPanel pnlDevoluciones;
     private javax.swing.JPanel pnlPrestamos;
+    private javax.swing.JTable tblLista;
     // End of variables declaration//GEN-END:variables
 }
